@@ -9,7 +9,7 @@ mylist.add("Lorem")
 
 proc printList(list : seq) =
     var val = $list[0]
-    defer:  echo(val)
+    defer: echo(val)
 
     if list.len == 0:
         return
