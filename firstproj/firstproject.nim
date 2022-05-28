@@ -1,20 +1,9 @@
-import std/strformat
+proc exampleProc(num: int|float): int =
+  num + 1
 
-var mylist = newSeq[string] (3)
-mylist[0] = "Foo"
-mylist[1] = "Bar"
-mylist[2] = "Baz"
+proc exampleProc2(num: int|float): int =
+  var result = num + 1
+  discard num
 
-mylist.add("Lorem")
-
-proc printList(list : seq) = 
-    if list.len == 0:
-        echo($list[0])
-        return
-
-    var val = $list[0]
-    for item in 1 .. list.len-1:
-        val &= fmt", {list[item]}"
-    echo(val)
-
-printList(mylist)
+echo(exampleProc(2))
+echo(exampleProc2(2))
