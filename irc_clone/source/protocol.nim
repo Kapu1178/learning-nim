@@ -38,6 +38,7 @@ proc createMessage*(username, message: string): string =
     "username": %username,
     "message": %message
   }) & "\c\l"
+
 when isMainModule:
   block:
     let data = """{"username": "John", "message": "Hi!"}"""
