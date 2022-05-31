@@ -26,7 +26,6 @@ proc messageClients(server: Server, message: string) {.async.} =
   let message_real = createMessage("SYSTEM", message)
   for client_iter in server.clients:
     if client_iter.connected:
-      echo("Tried to send: ", message_real)
       await client_iter.socket.send(message_real) #I dont know why "\c\l" breaks here but it does. Someone please tell me.
 
 proc processMessages(server: Server, client: Client) {.async.} =

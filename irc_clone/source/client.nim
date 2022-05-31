@@ -9,7 +9,6 @@ proc connect(socket: AsyncSocket, server_addr, username: string) {.async.} =
 
   while true:
     let line = await socket.recvLine()
-    echo("Line: ", line)
     let parsed = parseMessage(line)
     echo(parsed.username, ": ", parsed.message)
 
