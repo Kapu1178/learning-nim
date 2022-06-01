@@ -14,7 +14,6 @@ proc mainLoop(av: float): void =
         if to_add_int == 0:
             quit("Nice try, asshole. Zero ain't a valid number")
         scores[i] = to_add_int
-        echo(fmt"added {to_add_int} to array pos {i}")
     
     for i in 0..5:
         average += float(scores[i])
@@ -22,7 +21,9 @@ proc mainLoop(av: float): void =
     average /= 6
     let pretty_out: string = scores.join(",")
     echo("Average of the default scores: ", av)
-    echo(fmt"Average of your scores {pretty_out}: {average}")
+    echo(fmt"Average of your scores [{pretty_out}]: {average}")
+    echo("Input anything to quit:")
+    discard stdin.readLine()
 
 var average: float
 var total: float
